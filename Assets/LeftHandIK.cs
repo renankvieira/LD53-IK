@@ -11,21 +11,12 @@ public class LeftHandIK : MonoBehaviour
     public Transform handleTransform;
     public Animator mainAnimator;
 
-    public Transform LeftHand;
-    public Animator ThisAnimator;
-
     public void OnAnimatorIK(int layerIndex)
     {
-        ThisAnimator.SetIKPositionWeight(avatarIKGoal, positionWeight);
-        ThisAnimator.SetIKRotationWeight(avatarIKGoal, rotationWeight);
-        ThisAnimator.SetIKPosition(avatarIKGoal, handleTransform.position);
-        ThisAnimator.SetIKRotation(avatarIKGoal, handleTransform.rotation);
-
-
-        ThisAnimator.SetIKPositionWeight(AvatarIKGoal.LeftHand, 1);
-        ThisAnimator.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1);
-        ThisAnimator.SetIKPosition(AvatarIKGoal.LeftHand, LeftHand.position);
-        ThisAnimator.SetIKRotation(AvatarIKGoal.LeftHand, LeftHand.rotation);
+        mainAnimator.SetIKPositionWeight(avatarIKGoal, positionWeight);
+        mainAnimator.SetIKRotationWeight(avatarIKGoal, rotationWeight);
+        mainAnimator.SetIKPosition(avatarIKGoal, handleTransform.position);
+        mainAnimator.SetIKRotation(avatarIKGoal, handleTransform.rotation);
     }
 
 }
